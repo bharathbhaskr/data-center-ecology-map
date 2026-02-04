@@ -1,0 +1,550 @@
+/* =============================
+   MAP MARKERS (colored dots)
+   ============================= */
+.custom-map-marker {
+  /*position: relative;*/
+}
+
+.map-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.blue-dot {
+  background-color: #007bff;
+  /* "available" data center */
+}
+
+.green-dot {
+  background-color: #28a745;
+  /* "selected" data center */
+}
+
+.purple-dot {
+  background-color: #6f42c1;
+  /* "built" data center */
+}
+
+.orange-dot {
+  background-color: #fd7e14;
+  /* "potential" data center */
+}
+
+.cart-dot {
+  background-color: #ff9900;
+  /* "in cart" data center */
+}
+
+/* =============================
+     BUTTON & HOVER EFFECTS
+     ============================= */
+.btn {
+  font-weight: 500;
+  border-radius: 4px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Slight "lift" on hover for a 3D effect */
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Map "select" buttons inside the popups */
+.map-select-btn {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+/* =============================
+     LOADER & ERROR STATES
+     ============================= */
+.game-loading,
+.game-error {
+  text-align: center;
+  padding: 2rem;
+}
+
+.loader {
+  margin: 1rem auto;
+  border: 8px solid #e9ecef;
+  border-top: 8px solid #007bff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Simple spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* =============================
+     MAIN CONTAINER & HEADER
+     ============================= */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.game-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #343a40;
+  margin: 0;
+}
+
+.game-stats {
+  display: flex;
+  align-items: center;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  font-size: 1rem;
+  color: #343a40;
+}
+
+.stat-icon {
+  font-size: 1.2rem;
+  margin-right: 6px;
+  color: #007bff;
+  /* A nice bootstrap-blue shade */
+}
+
+.stat-label {
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.stat-value {
+  font-weight: 500;
+  color: #212529;
+}
+
+.user-controls {
+  display: flex;
+  align-items: center;
+}
+
+.username {
+  margin-right: 1rem;
+  font-weight: 500;
+}
+
+/* =============================
+     GAME CONTENT AREA
+     ============================= */
+.game-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* World Map styling (left panel) */
+.world-map {
+  flex: 2;
+  min-width: 50%;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-right: 1px solid #ccc;
+}
+
+.world-map h2 {
+  color: #343a40;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* =============================
+     INFO PANEL (right panel)
+     ============================= */
+.info-panel {
+  flex: 1;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-left: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+.info-panel h2 {
+  margin-top: 0;
+  color: #343a40;
+  font-weight: 700;
+}
+
+/* "Loading location details..." spinner area */
+.loading-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* Empty state / game instructions */
+.empty-state {
+  margin-top: 1rem;
+}
+
+.game-instructions {
+  background: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.game-instructions h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.game-goal {
+  margin-top: 1rem;
+  background: #f1f3f5;
+  padding: 0.75rem;
+  border-radius: 4px;
+}
+
+/* =============================
+     METRICS & PROGRESS BARS
+     ============================= */
+.metrics-container {
+  background: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.metrics-container h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #343a40;
+  margin-bottom: 0.75rem;
+}
+
+.metric {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.metric-label {
+  display: flex;
+  align-items: center;
+  width: 160px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.metric-icon {
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+.metric-bar {
+  flex: 1;
+  background: #e9ecef;
+  height: 10px;
+  border-radius: 5px;
+  margin-right: 8px;
+  position: relative;
+}
+
+.metric-fill {
+  height: 10px;
+  background: #007bff;
+  border-radius: 5px;
+  transition: width 0.2s ease;
+}
+
+.metric-value {
+  width: 48px;
+  text-align: right;
+  font-weight: 600;
+  color: #212529;
+}
+
+.metric-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.score {
+  font-weight: 700;
+  margin-left: 0.5rem;
+  color: #343a40;
+}
+
+.cost {
+  font-weight: 600;
+  margin-left: 0.5rem;
+  color: #212529;
+}
+
+.location-description {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #212529;
+}
+
+/* =============================
+     PROPERTY DETAILS
+     ============================= */
+.property-details h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.detail-icon {
+  margin-right: 5px;
+}
+
+.detail-label {
+  font-weight: 600;
+  margin-right: 8px;
+  color: #495057;
+}
+
+.detail-value {
+  font-weight: 400;
+  color: #343a40;
+}
+
+/* "Show More Details" button */
+.toggle-details-btn {
+  margin-top: 0.5rem;
+}
+
+/* =============================
+     LOCATION COMPARISON TABLE
+     ============================= */
+.location-comparison {
+  background: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.location-comparison h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.current-location {
+  background: #e2e6ea;
+  font-weight: 600;
+}
+
+/* =============================
+     BUILDING OPTIONS
+     ============================= */
+.building-options {
+  margin-top: 1rem;
+}
+
+.building-options h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.building-option {
+  background: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.building-option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.06);
+}
+
+.building-option.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.building-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.building-cost {
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.building-description {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #212529;
+}
+
+.building-specs {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+.spec {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #495057;
+  margin-top: 2px;
+}
+
+.total-cost {
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.build-button {
+  margin-top: 0.5rem;
+}
+
+/* =============================
+     NOTIFICATION
+     ============================= */
+.game-notification {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  padding: 1rem;
+  border-radius: 6px;
+  color: #fff;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  min-width: 240px;
+}
+
+.game-notification.success {
+  background-color: #28a745;
+}
+
+.game-notification.error {
+  background-color: #dc3545;
+}
+
+.notification-close {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+/* =============================
+     CART SIDEBAR
+     ============================= */
+.cart-toggle-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #f8f9fa;
+  /* A light gray (Bootstrap style) */
+  border-left: 2px solid #dee2e6;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.cart-header h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.close-cart-btn {
+  font-size: 0.9rem;
+  padding: 4px 8px;
+}
+
+.cart-body {
+  margin-top: 1rem;
+}
+
+.cart-item {
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 8px 12px;
+  transition: background-color 0.2s ease;
+}
+
+.cart-item:hover {
+  background-color: #e9ecef;
+}
+
+.cart-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+}
+
+/* Utility spacing for "my-3" (margin-y) */
+.my-3 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
