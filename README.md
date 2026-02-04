@@ -170,7 +170,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 📧 Contact
 
 For more information, collaboration, or support, please contact the project maintainers:
-- Email: sam.karkada@gmail.com, bharathbr12@gmail.com
+- Email: bharathbr12@gmail.com
 
 ---
 
