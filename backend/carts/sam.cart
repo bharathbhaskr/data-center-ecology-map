@@ -1,0 +1,14 @@
+{
+  "username": "sam",
+  "items": [
+    {
+      "latitude": 38.3498,
+      "longitude": -81.6326,
+      "name": "Charleston, WV",
+      "land_price": "$50,000",
+      "electricity": "$0.0858/kWh",
+      "notes": "{notes:[\"Charleston Data Solutions presence"
+    }
+  ],
+  "money_left": 950000
+}
